@@ -3,6 +3,7 @@ import { PizzasService } from './pizzas.service';
 import { PizzasController } from './pizzas.controller';
 import { Pizza, PizzaSchema } from './schema/pizzas.schema';
 import { MongooseModule } from '@nestjs/mongoose';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { MongooseModule } from '@nestjs/mongoose';
         schema: PizzaSchema,
       },
     ]),
+    ConfigModule,
   ],
   controllers: [PizzasController],
   providers: [PizzasService],
